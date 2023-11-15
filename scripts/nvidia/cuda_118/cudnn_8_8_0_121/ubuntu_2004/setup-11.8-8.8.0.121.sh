@@ -5,7 +5,7 @@
 
 cd /tmp
 
-wget https://github.com/sys41x4/gpu_docker_support/releases/download/v0.1.0/cudnn_8.8.0.121.zip -O /tmp/cudnn_8.8.0.121.zip && \
+wget https://github.com/arijit-bhowmick/gpu_docker_support/releases/download/v0.1.0/ubuntu2004_cuda118_cudnn_8.8.0.121.zip -O /tmp/cudnn_8.8.0.121.zip && \
 unzip cudnn_8.8.0.121.zip && \
 cd /tmp/cudnn_8_8_0_121/ubuntu/2004/amd64/cudnn-local-repo-8.8.0.121/ && \
 dpkg -i ./*.deb && \

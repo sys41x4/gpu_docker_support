@@ -22,7 +22,7 @@ RUN echo "/usr/local/cuda/lib64" | sudo tee -a /etc/ld.so.conf && ldconfig
 
 # Install CUDNN
 # Somehow running the same CUDNN cinstaller script is not working
-RUN /scripts/nvidia/cuda_118/cudnn_8_8_0_121/setup-11.8-8.8.0.121.sh
+RUN /scripts/nvidia/cuda_118/cudnn_8_8_0_121/ubuntu_2004/setup-11.8-8.8.0.121.sh
 
 ## Running the CUDNN check script from Dockerfile will exit the docker buil compiler
 # RUN /scripts/nvidia/cuda_118/cudnn_8_8_0_121/checks-11.8-8.8.0.121.sh
