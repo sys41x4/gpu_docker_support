@@ -1,0 +1,10 @@
+# Track all .jpg files with LFS
+*.jpg filter=lfs diff=lfs merge=lfs -text
+*.png filter=lfs diff=lfs merge=lfs -text
+
+# Exclude certain file types from LFS (deb, doc, pdf, exe, bin)
+*.deb !filter !diff
+*.doc !filter !diff
+*.pdf !filter !diff
+*.exe !filter !diff
+*.bin !filter !diff
