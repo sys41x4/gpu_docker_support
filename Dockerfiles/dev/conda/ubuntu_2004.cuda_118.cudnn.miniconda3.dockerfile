@@ -1,4 +1,4 @@
-FROM dev_nvidia_cuda_118:20.04
+FROM dev_nvidia_cuda_118_cudnn:20.04
 
 LABEL maintainer="Arijit Bhowmick <arijit_bhowmick@outlook.com>"
 
@@ -20,11 +20,8 @@ ENV PATH=/usr/local/cuda/bin:${PATH}
 ENV LD_LIBRARY_PATH=/usr/local/cuda/lib64:${LD_LIBRARY_PATH}
 RUN echo "/usr/local/cuda/lib64" | sudo tee -a /etc/ld.so.conf && ldconfig
 
-# Install CUDNN
-RUN /scripts/nvidia/cuda_118/cudnn_8_8_0_121/ubuntu_2004/setup-11.8-8.8.0.121.sh
-
-## Running the CUDNN check script from Dockerfile will exit the docker buil compiler
-# RUN /scripts/nvidia/cuda_118/cudnn_8_8_0_121/checks-11.8-8.8.0.121.sh
+# Install Conda | Miniconda3
+RUN /scripts/conda/miniconda3/setup_x64.sh
 
 ## COMMONS ##
 

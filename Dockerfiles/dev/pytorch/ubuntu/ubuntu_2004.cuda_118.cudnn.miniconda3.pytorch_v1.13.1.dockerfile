@@ -1,5 +1,4 @@
-FROM dev_nvidia_cuda_118:20.04
-
+FROM dev_nvidia_cuda_118_cudnn_miniconda3:20.04
 LABEL maintainer="Arijit Bhowmick <arijit_bhowmick@outlook.com>"
 
 # Fix timezone issues
@@ -8,29 +7,32 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 ENV DEBIAN_FRONTEND noninteractive # export DEBIAN_FRONTEND="noninteractive"
 # ENV CONDA_DIR_PATH=/root/miniconda
 
-RUN mkdir -p /data /scripts /installer
+RUN mkdir -p /data /scripts patches/ /installer
 COPY scripts/ /scripts/
+COPY patches/ /patches/
 COPY scripts/startup.sh /
+
 
 WORKDIR /workspace/
 
-    
 # Set environment variables for CUDA
 ENV PATH=/usr/local/cuda/bin:${PATH}
 ENV LD_LIBRARY_PATH=/usr/local/cuda/lib64:${LD_LIBRARY_PATH}
 RUN echo "/usr/local/cuda/lib64" | sudo tee -a /etc/ld.so.conf && ldconfig
 
-# Install CUDNN
-RUN /scripts/nvidia/cuda_118/cudnn_8_8_0_121/ubuntu_2004/setup-11.8-8.8.0.121.sh
+# Install pytorch [torch(v1.13.1)+torchvision(v0.14.1)]
 
-## Running the CUDNN check script from Dockerfile will exit the docker buil compiler
-# RUN /scripts/nvidia/cuda_118/cudnn_8_8_0_121/checks-11.8-8.8.0.121.sh
+## Install torch_v1.13.1
+RUN /scripts/pytorch/torch/v1.13.1/conda/build_and_install.sh
+
+## Install torchvision_v0.14.1
+RUN /scripts/pytorch/torchvision/v0.14.1/conda/build_and_install.sh
 
 ## COMMONS ##
 
 # Cleanup
 ## Removed initially supplied /data /scripts /installer directories
-RUN rm -r /data /scripts /installer
+RUN rm -r /data /scripts /installer /patches
 ## APT cache cleanup
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 

@@ -1,0 +1,12 @@
+https://github.com/Arijit-Bhowmick/gpu_docker_support/releases/download/v0.1.0/B70907B4.pub
+https://github.com/Arijit-Bhowmick/gpu_docker_support/releases/download/v0.1.0/cudnn-local-B70907B4-keyring.gpg
+https://github.com/Arijit-Bhowmick/gpu_docker_support/releases/download/v0.1.0/InRelease
+https://github.com/Arijit-Bhowmick/gpu_docker_support/releases/download/v0.1.0/libcudnn8-dev_8.8.0.121-1+cuda11.8_amd64.deb
+https://github.com/Arijit-Bhowmick/gpu_docker_support/releases/download/v0.1.0/libcudnn8-samples_8.8.0.121-1+cuda11.8_amd64.deb
+https://github.com/Arijit-Bhowmick/gpu_docker_support/releases/download/v0.1.0/libcudnn8_8.8.0.121-1+cuda11.8_amd64.deb
+https://github.com/Arijit-Bhowmick/gpu_docker_support/releases/download/v0.1.0/libcudnn8_8.8.0.121-1+cuda11.8_amd64.deb
+https://github.com/Arijit-Bhowmick/gpu_docker_support/releases/download/v0.1.0/Local.md5.gpg
+https://github.com/Arijit-Bhowmick/gpu_docker_support/releases/download/v0.1.0/Packages
+https://github.com/Arijit-Bhowmick/gpu_docker_support/releases/download/v0.1.0/Packages.gz
+https://github.com/Arijit-Bhowmick/gpu_docker_support/releases/download/v0.1.0/Release
+https://github.com/Arijit-Bhowmick/gpu_docker_support/releases/download/v0.1.0/Release.gpg
